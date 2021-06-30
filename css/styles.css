@@ -51,6 +51,11 @@ a {
 .studio {
   color: var(--black-color);
 }
+.nav-list a,
+.media-list a {
+  transition: color 500ms var(--cubic);
+}
+
 .nav-list a:hover,
 .nav-list a:focus,
 .media-list a:hover,
@@ -145,7 +150,7 @@ a {
 }
 .button {
   width: 200px;
-  background: var(--pretty-color);
+  background-color: var(--pretty-color);
   color: white;
   font-weight: bold;
   font-size: 16px;
@@ -155,10 +160,11 @@ a {
   cursor: pointer;
   font-family: inherit;
   border: none;
+  transition: background-color 250ms var(--cubic);
 }
 .button:hover,
 .button:focus {
-  background: var(--button-color);
+  background-color: var(--button-color);
 }
 
 /*Features section */
@@ -281,6 +287,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms var(--cubic), fill 250ms var(--cubic);
 }
 
 .icons-link li:not(:last-child) {
@@ -309,6 +316,7 @@ a {
   align-items: center;
   justify-content: center;
   fill: var(--icon-color);
+  transition: fill 250ms var(--cubic), border 250ms var(--cubic);
 }
 .client-icon:hover,
 .client-icon:focus {
@@ -336,16 +344,17 @@ a {
   line-height: 1.625;
   text-align: center;
   letter-spacing: 0.03em;
-  background: var(--team-color);
+  background-color: var(--team-color);
   padding: 6px 22px;
   cursor: pointer;
   border-radius: 4px;
   border: none;
+  transition: background-color 250ms var(--cubic), color 250ms var(--cubic);
 }
 
 .portfolio-but:hover,
 .portfolio-but:focus {
-  background: var(--pretty-color);
+  background-color: var(--pretty-color);
   color: var(--white-color);
 }
 .cards {
@@ -374,6 +383,7 @@ a {
 }
 .cards-item a {
   display: block;
+  transition: box-shadow 2500ms var(--cubic);
 }
 .cards-item a:hover,
 .cards-item a:focus {
