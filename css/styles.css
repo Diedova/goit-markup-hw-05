@@ -12,6 +12,7 @@
   --main-font: "Roboto", sans-serif;
   --accent-font: "Raleway", sans-serif;
   --footer-icon: #ffffff1a;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 * {
   margin: 0;
@@ -56,8 +57,24 @@ a {
 .media-list a:focus {
   color: var(--pretty-color);
 }
+.nav-list {
+  position: relative;
+}
 .current-link {
   color: var(--pretty-color);
+  position: relative;
+  padding-bottom: 33px;
+}
+.current-link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+
+  background-color: var(--pretty-color);
 }
 .nav-list,
 .media-list {
@@ -73,6 +90,7 @@ a {
   margin-right: 50px;
 }
 .media-list {
+  position: relative;
   color: var(--text-color);
   margin-left: auto;
 }
@@ -197,6 +215,22 @@ a {
 }
 .work {
   padding-bottom: 82px;
+}
+.box img {
+  display: block;
+}
+.label {
+  position: relative;
+}
+.box .pre-title {
+  position: absolute;
+  width: 100%;
+  color: var(--white-color);
+  text-align: center;
+  background: rgba(47, 48, 58, 0.8);
+  bottom: 0px;
+  padding: 27px 0px;
+  margin-bottom: 0px;
 }
 /*Team section */
 
@@ -361,6 +395,30 @@ a {
   letter-spacing: 0.03em;
   color: var(--text-color);
 }
+.cards-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-thumb:hover .cards-text,
+.cards-thumb:focus .cards-text {
+  transform: translateY(0);
+}
+.cards-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: rgba(33, 150, 243, 0.9);
+  color: var(--white-color);
+  padding: 063px 24px;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  transform: translateY(100%);
+  transition: transform 250ms var(--cubic);
+}
 
 /* FOOTER STYLES */
 
@@ -407,4 +465,47 @@ a {
 }
 .footer .icon-item {
   background-color: var(--footer-icon);
+}
+
+/* Modal windows */
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms var(--cubic);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background: var(--white-color);
+}
+.close {
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  right: 8px;
+  top: 8px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
 }
