@@ -383,7 +383,7 @@ a {
 }
 .cards-item a {
   display: block;
-  transition: box-shadow 2500ms var(--cubic);
+  transition: box-shadow 250ms var(--cubic);
 }
 .cards-item a:hover,
 .cards-item a:focus {
